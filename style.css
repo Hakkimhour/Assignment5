@@ -1,0 +1,332 @@
+*{
+    margin: 5px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    scroll-behavior: smooth;
+    scroll-padding: 5rem;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: hsl(0, 0%, 90%);
+}
+
+/* Header block*/
+header{
+    background: #f2f2f2;
+    padding: 1px 0 1px 0;
+}
+
+/* Menu Block */
+nav{
+    background: #1b1b1b;
+}
+nav::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav ul{
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+nav ul li{
+    float: left;
+    display: inline-block;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+nav ul li a:hover{
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+}
+
+nav ul ul li a:hover{
+    color: cyan;
+    box-shadow: none;
+}
+
+nav ul ul{
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+}
+
+nav ul li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+    top: 70px;
+}
+
+nav ul ul li{
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+nav ul ul li a{
+    line-height: 50px;
+}
+
+nav ul li{
+    background: #1b1b1b;
+    margin: 5px;
+}
+
+.show, .icon, input{
+    display: none;
+}
+
+@media all and (max-width: 800px){
+    nav ul{
+        margin-right: 0px;
+        float: left;
+    }
+    nav .logo{
+        padding-left: 30px;
+        width: 100%;
+    }
+    nav ul li, nav ul ul li{
+        display: block;
+        width: 100%;
+    }
+    nav ul ul{
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul ul a{
+        padding-left: 40px;
+    }
+    nav ul ul li{
+        border-bottom: 0px;
+    }
+    .show{
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+    .show:hover{
+        color: cyan;
+    }
+    nav ul li a:hover{
+        box-shadow: none;
+    }
+    .icon{
+        display: block;
+        color: white;
+        position: absolute;
+        right: 40px;
+        line-height: 70px;
+        font-size: 25px;
+    }
+    .show + a, ul{
+        display: none;
+    }
+    [id^=btn]:checked + ul{
+        display: block;
+    }
+    ul{
+        text-align: center;
+    }
+    *{
+        scroll-padding: 29rem;
+    }
+}
+/* Logo block*/
+nav .logo{
+    float: left;
+    color: white;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+    font-size: 24px;
+    font-family: AKbalthom Freehand;
+}
+
+header{
+    position: sticky;
+    top: 0;
+}
+
+/* Main Conntent*/
+.container{
+    width: 90% auto;
+    height: auto;
+    background: hsl(0, 0%, 90%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.block{
+    height: 530px;
+    background: hsl(0, 0%, 75%);
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0 5px 5px #e1e1e1;
+    padding: 1.5em;
+    width: 20%;
+}
+
+.block img{
+    width: 100%;
+}
+
+.block h4{
+    font-size: 1em;
+    margin: 0.5em 0;
+    font-family: Kh Kangrey;
+}
+
+.block .product-info{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-info p{
+    font-size: 1.2em;
+    font-family: AKbalthom KhmerLight;
+}
+
+.product-info button{
+    background-color: white;
+    color: black;
+    border-radius: 10%;
+    width: 100px;
+    height: 40px;
+    font-size: 1em;
+    font-family: Kh Kangrey;
+}
+
+.rating {
+    color: gold;
+    font-size: 1.5em;
+}
+
+.product-info button:hover{
+    color: white;
+    background-color: black;
+}
+
+.slide{
+    font-size: 30px;
+    padding: 15px;
+    color: black;
+    margin-left: 35px;
+    font-family: MV Boli;
+}
+
+/* Meadia of main contain */
+@media screen and (max-width: 1200px) {
+    .block{
+        width: 40%;
+        height: 480px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .block{
+        width: 80%;
+        height: 470px;
+    }
+}
+
+/* Fotter block*/
+.footerContainer{
+    background: hsl(0, 0%, 15%);
+    color: white;
+    padding: 1em 0 1em 0;
+    text-align: center;
+}
+
+.socialIcon{
+    justify-content: center;
+    font-size: 25px;
+}
+
+.socialIcon a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.socialIcon a i{
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcon a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialIcon a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footerNav{
+    margin: 30px 0;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+}
+
+.footerNav li{
+    list-style-type: none;
+}
+
+.footerNav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.5ems;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+
+.footerBottom{
+    background: black;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
